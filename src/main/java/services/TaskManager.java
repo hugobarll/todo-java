@@ -16,4 +16,11 @@ public class TaskManager {
         nextId++;
         tasks.add(task);
     }
+
+    public void listTasks() {
+        for (Task t : tasks) {
+            System.out.println(t);
+        }
+    }
+
 }
