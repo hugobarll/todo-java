@@ -33,6 +33,14 @@ public class Main {
                 taskManager.listTasks();
                 System.out.println();
             }
+            else if (option == 3) {
+                System.out.print("Enter the id to update the Task: ");
+                int id = sc.nextInt();
+                sc.nextLine();
+                taskManager.completeTask(id);
+                System.out.println("Task completed");
+                System.out.println();
+            }
 
             if (option == 5) {
                 break;

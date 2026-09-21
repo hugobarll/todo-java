@@ -23,4 +23,11 @@ public class TaskManager {
         }
     }
 
+    public void completeTask(int id) {
+        for (Task t : tasks) {
+            if (t.getId() == id) {
+                t.setDone(true);
+            }
+        }
+    }
 }
