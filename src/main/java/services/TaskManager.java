@@ -1,6 +1,7 @@
 package services;
 
 import entities.Task;
+import exceptions.TaskNotFoundException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,14 @@ public class TaskManager {
     }
 
     public void listTasks() {
-        for (Task t : tasks) {
-            System.out.println(t);
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks to show");
+        }
+        else {
+            System.out.println("All tasks:");
+            for (Task t : tasks) {
+                System.out.println(t);
+            }
         }
     }
 
@@ -27,11 +34,17 @@ public class TaskManager {
         for (Task t : tasks) {
             if (t.getId() == id) {
                 t.setDone(true);
+                return;
             }
         }
+        throw new TaskNotFoundException("Task not found with id " + id);
     }
 
-    public boolean deleteTask(int id) {
-        return tasks.removeIf(task -> task.getId() == id);
+    public void deleteTask(int id) {
+        boolean removed = tasks.removeIf(task -> task.getId() == id);
+
+        if (!removed) {
+            throw new TaskNotFoundException("Task not found with id " + id);
+        }
     }
 }
