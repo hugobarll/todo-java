@@ -30,4 +30,8 @@ public class TaskManager {
             }
         }
     }
+
+    public boolean deleteTask(int id) {
+        return tasks.removeIf(task -> task.getId() == id);
+    }
 }

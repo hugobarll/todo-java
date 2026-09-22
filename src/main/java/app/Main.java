@@ -34,15 +34,23 @@ public class Main {
                 System.out.println();
             }
             else if (option == 3) {
-                System.out.print("Enter the id to update the Task: ");
+                System.out.print("Enter the id to update the task: ");
                 int id = sc.nextInt();
                 sc.nextLine();
                 taskManager.completeTask(id);
                 System.out.println("Task completed");
                 System.out.println();
             }
-
-            if (option == 5) {
+            else if (option == 4) {
+                System.out.print("Enter the id to remove the task: ");
+                int id = sc.nextInt();
+                sc.nextLine();
+                if (taskManager.deleteTask(id)) {
+                    System.out.println("Task removed");
+                } else System.out.println("Task not found");
+                System.out.println();
+            }
+            else if (option == 5) {
                 break;
             }
         }
