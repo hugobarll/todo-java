@@ -42,7 +42,7 @@ public class Task implements Serializable {
         this.description = description;
     }
 
-    public boolean getDone() {
+    public boolean isDone() {
         return done;
     }
 

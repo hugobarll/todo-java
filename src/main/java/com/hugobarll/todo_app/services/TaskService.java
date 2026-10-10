@@ -28,10 +28,10 @@ public class TaskService {
         return taskRepository.save(task);
    }
 
-   public void complete(Long id) {
+   public Task complete(Long id) {
         Task obj = findById(id);
         obj.setDone(true);
-        taskRepository.save(obj);
+        return taskRepository.save(obj);
    }
 
    public void deleteById(Long id) {
