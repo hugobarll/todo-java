@@ -21,9 +21,9 @@ public class TestConfig implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
 
-        Task t1 = new Task(null, "Terminar esse projeto", false);
-        Task t2 = new Task(null, "Comprar flores", false);
-        Task t3 = new Task(null, "Comprar alianças", false);
+        Task t1 = new Task(null, "Study Spring Boot", false);
+        Task t2 = new Task(null, "Write the README", false);
+        Task t3 = new Task(null, "Push to GitHub", false);
 
         taskRepository.saveAll((Arrays.asList(t1,t2,t3)));
     }
