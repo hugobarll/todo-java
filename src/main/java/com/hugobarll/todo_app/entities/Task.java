@@ -1,22 +1,36 @@
-package entities;
+package com.hugobarll.todo_app.entities;
 
-public class Task {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-    private int id;
+import java.io.Serializable;
+
+@Entity
+public class Task implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String description;
     private boolean done;
 
-    public Task(int id, String description, boolean done) {
+    public Task() {
+    }
+
+    public Task(Long id, String description, boolean done) {
         this.id = id;
         this.description = description;
         this.done = done;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
